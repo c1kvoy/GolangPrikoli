@@ -1,44 +1,17 @@
 package main
 
 import (
+	"first/structs/usermethods"
 	"fmt"
-	"time"
-
-	"github.com/google/uuid"
 )
 
-type Account struct {
-	Id          uuid.UUID
-	Username    string
-	Email       string
-	CreatetDate time.Time
-}
-
-func NewAccount(username, email string) Account {
-	user := Account{
-		Id:          uuid.New(),
-		Username:    username,
-		Email:       email,
-		CreatetDate: time.Now(),
-	}
-	return user
-}
-
-func (user *Account) updateUser(newUser Account) {
-	if newUser.Username != "" {
-		user.Username = newUser.Username
-	}
-	if newUser.Email != "" {
-		user.Email = newUser.Email
-	}
-}
-
 func main() {
-	user1 := NewAccount("Vsevolod", "klonsve@mail.ru")
+	user1 := usermethods.NewAccount("Vsevolod", "klonsve@mail.ru")
 	fmt.Println("Username before: ", user1)
-	newUser := Account{
+
+	newUser := usermethods.Account{
 		Username: "Roflus!",
 	}
-	user1.updateUser(newUser)
+	user1.UpdateUser(newUser)
 	fmt.Println("Username after: ", user1)
 }

@@ -1,4 +1,4 @@
-module accounts
+module first
 
 go 1.21.6
 
