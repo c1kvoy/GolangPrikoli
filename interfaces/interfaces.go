@@ -21,7 +21,11 @@ func main() {
 		P2: point2,
 		P3: point3,
 	}
-
+	var circle1 Shape = shapes.Circle{
+		Radius: 3,
+	}
 	fmt.Printf("Triangle1 Area is: %.2f \n", triangle1.Area())
 	fmt.Printf("Triangle1 Perimetr is: %.2f \n", triangle1.Perimetr())
+	fmt.Printf("Circle1 Area is: %.2f \n", circle1.Area())
+	fmt.Printf("Circle1 Perimetr is: %.2f \n", circle1.Perimetr())
 }
