@@ -1,8 +1,10 @@
 package main
 
 import (
+	"encoding/json"
 	"first/structs/usermethods"
 	"fmt"
+	"github.com/davecgh/go-spew/spew"
 )
 
 func main() {
@@ -13,5 +15,7 @@ func main() {
 		Username: "Roflus!",
 	}
 	user1.UpdateUser(newUser)
-	fmt.Println("Username after: ", user1)
+	json_data, _ := json.MarshalIndent(user1, "", "")
+	fmt.Print(string(json_data), "\n")
+	spew.Dump(user1)
 }
