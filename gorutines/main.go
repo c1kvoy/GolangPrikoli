@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"sync"
 	_ "time"
@@ -32,4 +33,6 @@ func rq(url string) {
 	}
 	defer resp.Body.Close()
 	fmt.Printf("Data got from %s , status code: %d \n", url, 200)
+	body, _ := io.ReadAll(resp.Body)
+	fmt.Println(string(body))
 }
