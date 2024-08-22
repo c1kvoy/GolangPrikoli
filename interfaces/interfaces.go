@@ -10,6 +10,12 @@ type Shape interface {
 	Perimetr() float64
 }
 
+func AreaOut(figures []Shape) {
+	for _, figure := range figures {
+		fmt.Printf("%.2f \n", figure.Area())
+	}
+}
+
 func main() {
 
 	point1 := shapes.Point{X: 0.0, Y: 0.0, Z: 4.0}
@@ -24,8 +30,6 @@ func main() {
 	var circle1 Shape = shapes.Circle{
 		Radius: 3,
 	}
-	fmt.Printf("Triangle1 Area is: %.2f \n", triangle1.Area())
-	fmt.Printf("Triangle1 Perimetr is: %.2f \n", triangle1.Perimetr())
-	fmt.Printf("Circle1 Area is: %.2f \n", circle1.Area())
-	fmt.Printf("Circle1 Perimetr is: %.2f \n", circle1.Perimetr())
+	figures := []Shape{circle1, triangle1}
+	AreaOut(figures)
 }
