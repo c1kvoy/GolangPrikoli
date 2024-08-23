@@ -8,13 +8,11 @@ func main() {
 	go func() {
 		for i := 0; i < 10; i++ {
 			c <- i
-			done <- true
 		}
+		done <- true
 	}()
 	go func() {
-		for i := 0; i < 10; i++ {
-			<-done
-		}
+		<-done
 		close(c)
 	}()
 	for a := range c {
