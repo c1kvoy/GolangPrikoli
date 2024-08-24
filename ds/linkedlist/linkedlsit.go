@@ -27,7 +27,6 @@ func (head *ListNode) Insert(val int, pos int) *ListNode {
 	return head
 }
 
-
 func PrintList(head *ListNode) {
 	dummy := head
 	for dummy != nil {

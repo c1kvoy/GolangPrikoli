@@ -6,15 +6,15 @@ import (
 	"github.com/google/uuid"
 )
 
-type Account struct {
+type account struct {
 	Id          uuid.UUID
 	Username    string
 	Email       string
 	CreatetDate time.Time
 }
 
-func NewAccount(username, email string) Account {
-	user := Account{
+func NewAccount(username, email string) account {
+	user := account{
 		Id:          uuid.New(),
 		Username:    username,
 		Email:       email,
@@ -24,7 +24,7 @@ func NewAccount(username, email string) Account {
 }
 
 // Определение метода updateUser
-func (user *Account) UpdateUser(newUser Account) {
+func (user *account) UpdateUser(newUser account) {
 	if newUser.Username != "" {
 		user.Username = newUser.Username
 	}
