@@ -12,7 +12,7 @@ import (
 )
 
 // const (
-// 	api_key = "bcf5e86142371b09b2bd3a766310da2b"
+// 	api_key = ""
 // )
 
 type Settings struct {
