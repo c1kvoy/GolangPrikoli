@@ -20,6 +20,7 @@ type Settings struct {
 }
 
 // TODO: Понять как происходит загрузка конфига и какие для этого лучшие практики
+
 func loadConfig() (Settings, error) {
 	var settings Settings
 	file, err := os.Open("config.yaml")
