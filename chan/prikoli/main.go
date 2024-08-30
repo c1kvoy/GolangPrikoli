@@ -5,32 +5,15 @@ import (
 )
 
 func main() {
-
 	c := make(chan int)
-	done := make(chan bool)
-
 	go func() {
-		for i := 0; i < 100000; i++ {
+		for i := 0; i <= 3; i++ {
 			c <- i
 		}
-		close(c)
 	}()
-
-	go func() {
-		for n := range c {
-			fmt.Println(n)
-		}
-		done <- true
-	}()
-
-	go func() {
-		for n := range c {
-			fmt.Println(n)
-		}
-		done <- true
-	}()
-
-	<-done
-	<-done
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
 
 }

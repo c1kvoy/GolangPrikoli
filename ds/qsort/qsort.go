@@ -28,3 +28,4 @@ func main() {
 	nonsorted := []int{23123, 2, 3, 1, 5}
 	fmt.Println(Qsort(nonsorted))
 }
+

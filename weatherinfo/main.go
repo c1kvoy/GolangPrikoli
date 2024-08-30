@@ -87,5 +87,5 @@ func main() {
 		fmt.Printf("Error loading config: %v\n", err)
 		return
 	}
-	CurrentWeather("Krasnoyarsk", settings.API_KEY)
+	CurrentWeather("Moscow", settings.API_KEY)
 }

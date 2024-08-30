@@ -34,7 +34,7 @@ func PrintList(head *ListNode) {
 		dummy = dummy.Next
 	}
 }
-dw
+
 func main() {
 	x := NListNode(1)
 	x.Next = NListNode(2)
@@ -44,6 +44,5 @@ func main() {
 	head := x.Insert(34343, 1)
 	fmt.Println("SECOND LIST:")
 	PrintList(head)
-	
+
 }
- read 
